@@ -1,5 +1,5 @@
+// Stylesheet
 import "./styles.css";
-import doc from "./doc.js";
 
 // Page elements
 
@@ -26,10 +26,15 @@ const contentNode = document.getElementById("content");
 
 // Page rendering functions
 
+import renderHomePage from "./render-home.js";
+import renderMenuPage from "./render-menu.js";
+import renderAboutPage from "./render-about.js";
+import renderContactPage from "./render-contact.js";
+
 function renderTab(tabNode) {
     clearPageContent();
     setCurrentTab(tabNode);
-    allTabsById[tabNode.id].render();
+    allTabsById[tabNode.id].render(contentNode);
 }
 
 function clearPageContent() {
@@ -45,39 +50,6 @@ function setCurrentTab(currentTabNode) {
             tabNode.classList.remove("current-tab");
         }
     }
-}
-
-function renderHomePage() {
-    contentNode.append(
-        doc.h2("Home"),
-        doc.p("This is the home page."),
-        doc.div([
-            "We can put ",
-            doc.strong("all"),
-            " the paragraphs we want in here.",
-        ]),
-    );
-}
-
-function renderMenuPage() {
-    contentNode.append(
-        doc.h2("Menu"),
-        doc.p("This is the menu page."),
-    );
-}
-
-function renderAboutPage() {
-    contentNode.append(
-        doc.h2("About Us"),
-        doc.p("Lorem ipsum dolor sit amet..."),
-    );
-}
-
-function renderContactPage() {
-    contentNode.append(
-        doc.h2("Contact Us"),
-        doc.p("Here's our fake email address and phone number"),
-    );
 }
 
 // Tab events
