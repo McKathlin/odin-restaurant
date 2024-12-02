@@ -8,12 +8,13 @@ body {
     --header-text-color: #ffeebb;
     --header-back-color: #123020;
     --tab-color: #9d1c22;
+    --frame-highlight-color: #dbaf51;
     --content-text-color: #201000;
     --content-back-color: #ffeebb;
 
     --default-font: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
 
-    --content-width: 80rem;
+    --content-width: 70rem;
 
     font-family: var(--default-font);
     color: var(--header-text-color);
@@ -75,8 +76,48 @@ main {
     border-top: 0.4rem solid var(--tab-color);
     border-radius: 1.2rem 1.2rem 0.4rem 0.4rem;
     max-width: var(--content-width);
-    padding: 1rem 2rem;
+    padding: 1rem;
     margin: auto;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, min-content);
+    min-height: 70vh;
+}
+
+#content .section-head {
+    grid-column: span 3;
+}
+
+#content .text-block {
+    grid-column: span 2;
+    padding: 0 2rem;
+}
+
+#content .text-block * {
+    margin-bottom: 1rem;
+}
+
+#content .text-block p {
+    line-height: 1.4rem;
+}
+
+#content img {
+    display: block;
+    width: 100%;
+    background-color: var(--frame-highlight-color);
+    border: 0.4rem double var(--content-back-color);
+    border-radius: 0.3rem;
+}
+
+#content .image-left {
+    grid-column: 1;
+}
+
+#content .image-right {
+    grid-column: -1;
 }
 
 /* Footer */
