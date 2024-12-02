@@ -96,6 +96,8 @@ const doc = (function() {
         module[shortcut] = _elementClosure(shortcut);
     }
 
+    module.br = function() { return document.createElement("br"); }
+
     return module;
 })();
 

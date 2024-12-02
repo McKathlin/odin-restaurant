@@ -1,4 +1,4 @@
-// Stylesheet
+// Stylesheet and dependencies
 import "./styles.css";
 
 // Page elements
