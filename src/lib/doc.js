@@ -12,6 +12,10 @@ const doc = (function() {
     ]);
 
     function make(selector, properties) {
+        if (selector == "label") {
+            console.log("Label properties");
+            console.log(properties);
+        }
         // Standardize properties object
         if (!properties) {
             if ("object" == typeof selector) {
@@ -61,7 +65,7 @@ const doc = (function() {
 
         // Set text
         if (properties.text) {
-            element.textContent = properties.text;
+            element.append(properties.text);
         }
 
         // Set attributes
@@ -75,14 +79,22 @@ const doc = (function() {
 
         // Set children
         if (properties.children) {
-            element.replaceChildren(...properties.children);
+            //console.log(properties.children);
+            element.append(...properties.children);
         }
 
         return element;
     }
 
     function _elementClosure(elementType) {
-        return function(properties) {
+        return function(text, properties) {
+            if (properties) {
+                properties.text = text;
+            } else if ("string" == typeof text) {
+                properties = { text };
+            } else {
+                properties = text;
+            }
             return make(elementType, properties);
         };
     }
@@ -90,7 +102,8 @@ const doc = (function() {
     const module = { make };
 
     const _shortcuts = [
-        "a", "div", "em", "h1", "h2", "h3", "img", "p", "span", "strong"
+        "a", "button", "div", "em", "h1", "h2", "h3", "fieldset", "img", "input",
+        "label", "p", "span", "strong", "textarea"
     ];
     for (const shortcut of _shortcuts) {
         module[shortcut] = _elementClosure(shortcut);

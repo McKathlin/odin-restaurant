@@ -18,6 +18,7 @@ body {
     --content-back-color: #ffeebb;
 
     --default-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --system-font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
     --title-font: Christmas, serif;
 
     --content-width: 70rem;
@@ -136,6 +137,65 @@ main {
     font-size: 6rem;
     color: var(--frame-color);
     content: ")";
+}
+
+/* Contact Form */
+
+form {
+    background-color: var(--frame-color);
+    border-radius: 0.2rem;
+    padding: 1rem 2rem;
+    max-width: 30rem;
+}
+
+form fieldset {
+    border: none;
+    display: block;
+}
+
+form label {
+    display: block;
+}
+
+#content .text-block form label span {
+    font-weight: bold;
+    font-style: italic;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+form input, form textarea {
+    font-family: var(--system-font);
+    font-size: 1rem;
+    line-height: 1.25rem;
+    display: block;
+    width: 100%;
+
+    color: var(--content-text-color);
+    background-color: var(--content-back-color);
+    border: none;
+    border-radius: 0.1rem;
+    padding: 0 0.2rem;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: var(--frame-color);
+}
+
+form textarea {
+    min-height: 4lh;
+}
+
+form button {
+    color: var(--header-text-color);
+    background-color: var(--tab-color);
+    font-family: var(--default-font);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    padding: 0.4rem 2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
 }
 
 /* Footer */
