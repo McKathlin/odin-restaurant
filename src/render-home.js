@@ -1,4 +1,4 @@
-import doc from "./doc.js";
+import doc from "./lib/doc.js";
 
 function render(contentNode) {
     contentNode.append(
@@ -7,7 +7,7 @@ function render(contentNode) {
         doc.div([
             "We can put ",
             doc.strong("all"),
-            " the paragraphs we want in here.",
+            " the paragraphs we need in here.",
         ]),
     );
 }

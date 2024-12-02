@@ -1,4 +1,4 @@
-import doc from "./doc.js"
+import doc from "./lib/doc.js";
 
 function render(contentNode) {
     contentNode.append(
