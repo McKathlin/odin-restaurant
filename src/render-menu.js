@@ -65,7 +65,7 @@ function render(contentNode) {
                         "Your choice of whole, skim, or 2% milk. The Santa-approved complement to cookies."
                     ),
                     menuItem("Chocolate Milk",
-                        "Your choice of whole, skim, or 2% milk with our house blend chocolate syrup."
+                        "Your choice of whole, skim, or 2% chocolate milk. We blend it with our homestyle chocolate syrup."
                     ),
                     menuItem("Wassail",
                         "The warm, spicy holiday classic. We flavor our wassail with real orange zest."
