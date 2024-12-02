@@ -139,6 +139,14 @@ main {
     content: ")";
 }
 
+main #content .left {
+    text-align: left;
+}
+
+main #content .right {
+    text-align: right;
+}
+
 /* Contact Form */
 
 form {
