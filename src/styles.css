@@ -6,7 +6,7 @@
 
 body {
     --header-text-color: #ffeebb;
-    --header-back-color: #003810;
+    --header-back-color: #123020;
     --tab-color: #9d1c22;
     --content-text-color: #201000;
     --content-back-color: #ffeebb;
@@ -28,6 +28,11 @@ header {
     max-width: var(--content-width);
     margin: auto;
     text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    line-height: 5rem;
 }
 
 nav {
