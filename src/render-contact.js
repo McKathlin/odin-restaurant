@@ -8,8 +8,8 @@ function render(contentNode) {
             doc.img({ src: shopWindowImage }),
             doc.make(".text-block", [
                 doc.h2("Contact Us"),
-                doc.p("Would you like us to cater an event? Do you have questions about our menu?"),
-                doc.p("Use the form below to get in touch with us."),
+                doc.p("Would you like us to cater your event? Do you have questions about our menu?"),
+                doc.p("Use the form below to get in touch with us. We'll respond by email within two business days. Or at least, we would if this were a real restaurant.."),
 
                 doc.make("form#contact-form", [
                     doc.fieldset([
