@@ -50,15 +50,19 @@ function setCurrentTab(currentTabNode) {
 function renderHomePage() {
     contentNode.append(
         doc.h2("Home"),
-        doc.p("This is the home page"),
-        doc.p("We can put all the paragraphs we want here."),
+        doc.p("This is the home page."),
+        doc.div([
+            "We can put ",
+            doc.strong("all"),
+            " the paragraphs we want in here.",
+        ]),
     );
 }
 
 function renderMenuPage() {
     contentNode.append(
         doc.h2("Menu"),
-        doc.p("This is the menu page"),
+        doc.p("This is the menu page."),
     );
 }
 
