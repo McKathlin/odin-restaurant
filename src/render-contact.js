@@ -11,7 +11,7 @@ function render(contentNode) {
                 doc.p("Would you like us to cater an event? Do you have questions about our menu?"),
                 doc.p("Use the form below to get in touch with us."),
 
-                doc.make("form", [
+                doc.make("form#contact-form", [
                     doc.fieldset([
                         doc.label({ for: "name", children: [
                             doc.span("Name:"),
@@ -40,12 +40,28 @@ function render(contentNode) {
                                 placeholder: "Your message goes here" }),
                         ]}),
                     ]}),
-                    doc.button("Send Message"),
+                    doc.button({ id: "send-button", text: "Send Message" }),
                 ]),
+                doc.make("h3#contact-response.hidden",
+                    "Thank you! We'll email you a reply as soon as we can."),
                 doc.make(".filigree"),
             ]),
         ]),
     );
+
+    const formNode = document.getElementById("contact-form");
+    const responseNode = document.getElementById("contact-response");
+
+    formNode.classList.remove("hidden");
+    responseNode.classList.add("hidden");
+
+    document.getElementById("send-button").addEventListener("click", (e) => {
+        if (formNode.checkValidity()) {
+            e.preventDefault();
+            formNode.classList.add("hidden");
+            responseNode.classList.remove("hidden");
+        }
+    });
 }
 
 export default render;
