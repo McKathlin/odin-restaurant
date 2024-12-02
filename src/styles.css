@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Christmas";
+    src: url("./font/Christmas Squad.otf");
+}
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -7,16 +12,17 @@
 body {
     --header-text-color: #ffeebb;
     --header-back-color: #123020;
-    --tab-color: #9d1c22;
-    --frame-highlight-color: #dbaf51;
+    --tab-color: #ac2229;
+    --frame-color: #dbaf51;
     --content-text-color: #201000;
     --content-back-color: #ffeebb;
 
-    --default-font: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    --default-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --title-font: Christmas, serif;
 
     --content-width: 70rem;
 
-    font-family: var(--default-font);
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--header-text-color);
     background-color: var(--header-back-color);
 }
@@ -31,13 +37,8 @@ header {
     text-align: center;
 }
 
-@font-face {
-    font-family: "Christmas";
-    src: url("./font/Christmas Squad.otf");
-}
-
 header h1 {
-    font-family: Christmas, fantasy, serif;
+    font-family: var(--title-font);
     font-weight: normal;
     margin-top: 1rem;
     font-size: 5rem;
@@ -55,11 +56,13 @@ nav {
 nav button {
     display: block;
     font-family: var(--default-font);
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: var(--header-text-color);
     background-color: var(--tab-color);
     border: 0.1rem solid var(--tab-color);
     border-radius: 0.4rem 0.4rem 0 0;
+    width: 7rem;
     padding: 0.1rem 1rem;
 
     position: relative;
@@ -88,23 +91,29 @@ main {
 }
 
 #content {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(auto-fit, min-content);
     min-height: 70vh;
 }
 
-#content .section-head {
-    grid-column: span 3;
+#content .section {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: flex-start;
 }
 
 #content .text-block {
-    grid-column: span 2;
+    flex: 2;
     padding: 0 2rem;
 }
 
 #content .text-block * {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+#content .text-block h2 {
+    margin-top: 1rem;
 }
 
 #content .text-block p {
@@ -112,19 +121,21 @@ main {
 }
 
 #content img {
+    flex: 1;
+    max-width: 30%;
+
     display: block;
     width: 100%;
-    background-color: var(--frame-highlight-color);
+    background-color: var(--frame-color);
     border: 0.4rem double var(--content-back-color);
     border-radius: 0.3rem;
 }
 
-#content .image-left {
-    grid-column: 1;
-}
-
-#content .image-right {
-    grid-column: -1;
+#content .filigree::after {
+    font-family: var(--title-font);
+    font-size: 6rem;
+    color: var(--frame-color);
+    content: ")";
 }
 
 /* Footer */
