@@ -6,9 +6,9 @@ const doc = (function() {
     const _idRegex = /#([a-z][a-z0-9_\-]*)/i;
     const _classRegex = /\.[a-z0-9_\-]+/gi;
 
-    const _classPropertyNames = ["classes", "classList"];
+    const _classListPropertyNames = ["classes", "classList"];
     const _specialPropertySet = new Set([
-        "classes", "classList", "text", "children"
+        "classes", "classList", "className", "text", "children"
     ]);
 
     function make(selector, properties) {
@@ -48,7 +48,10 @@ const doc = (function() {
         }
 
         // Set classes from properties, if applicable
-        for (const classPropertyName of _classPropertyNames) {
+        if (properties.className) {
+            element.className = properties.className;
+        }
+        for (const classPropertyName of _classListPropertyNames) {
             if (properties[classPropertyName]) {
                 for (let className of properties[classPropertyName]) {
                     element.classList.add(className);
