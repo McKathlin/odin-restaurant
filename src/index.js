@@ -1,4 +1,5 @@
 import "./styles.css";
+import doc from "./doc.js";
 
 // Page elements
 
@@ -25,6 +26,12 @@ const contentNode = document.getElementById("content");
 
 // Page rendering functions
 
+function renderTab(tabNode) {
+    clearPageContent();
+    setCurrentTab(tabNode);
+    allTabsById[tabNode.id].render();
+}
+
 function clearPageContent() {
     contentNode.replaceChildren();
 }
@@ -41,19 +48,32 @@ function setCurrentTab(currentTabNode) {
 }
 
 function renderHomePage() {
-    contentNode.textContent = "Home Page";
+    contentNode.append(
+        doc.h2("Home"),
+        doc.p("This is the home page"),
+        doc.p("We can put all the paragraphs we want here."),
+    );
 }
 
 function renderMenuPage() {
-    contentNode.textContent = "Menu Page";
+    contentNode.append(
+        doc.h2("Menu"),
+        doc.p("This is the menu page"),
+    );
 }
 
 function renderAboutPage() {
-    contentNode.textContent = "About Page";
+    contentNode.append(
+        doc.h2("About Us"),
+        doc.p("Lorem ipsum dolor sit amet..."),
+    );
 }
 
 function renderContactPage() {
-    contentNode.textContent = "Contact Page";
+    contentNode.append(
+        doc.h2("Contact Us"),
+        doc.p("Here's our fake email address and phone number"),
+    );
 }
 
 // Tab events
@@ -61,12 +81,10 @@ function renderContactPage() {
 for (const tabId in allTabsById) {
     let tabNode = allTabsById[tabId].tabNode;
     tabNode.addEventListener("click", function(event) {
-        clearPageContent();
-        setCurrentTab(allTabsById[event.target.id].tabNode);
-        allTabsById[event.target.id].render();
+        renderTab(tabNode);
     });
 }
 
 // Startup
 
-renderHomePage();
+renderTab(document.getElementById("home-tab"));
