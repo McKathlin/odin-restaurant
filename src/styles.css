@@ -139,6 +139,31 @@ main {
     content: ")";
 }
 
+/* Menu */
+
+main #content ul {
+    list-style: none;
+    line-height: 1.4rem;
+    margin-left: 5rem;
+    text-indent: -3rem;
+}
+
+.dish-name {
+    font-weight: bold;
+}
+
+.dish-name::after {
+    content: ": ";
+}
+
+main #content .left {
+    text-align: left;
+}
+
+main #content .right {
+    text-align: right;
+}
+
 /* Contact Form */
 
 form {
