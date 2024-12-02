@@ -13,6 +13,8 @@ body {
 
     --default-font: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
 
+    --content-width: 80rem;
+
     font-family: var(--default-font);
     color: var(--header-text-color);
     background-color: var(--header-back-color);
@@ -23,6 +25,9 @@ body {
 header {
     color: var(--header-text-color);
     background-color: var(--header-back-color);
+    max-width: var(--content-width);
+    margin: auto;
+    text-align: center;
 }
 
 nav {
@@ -63,10 +68,18 @@ main {
     color: var(--content-text-color);
     background-color: var(--content-back-color);
     border-top: 0.4rem solid var(--tab-color);
-    border-radius: 1.2rem 1.2rem 0 0;
+    border-radius: 1.2rem 1.2rem 0.4rem 0.4rem;
+    max-width: var(--content-width);
+    padding: 1rem 2rem;
+    margin: auto;
 }
 
 /* Footer */
+
+footer {
+    text-align: center;
+    line-height: 2rem;
+}
 
 footer a {
     color: var(--header-text-color);
