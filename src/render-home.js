@@ -18,7 +18,10 @@ function render(contentNode) {
                 doc.p(["10:00 AM - 4:00 PM", doc.br(), "Monday through Saturday"]),
 
                 doc.h2("Address"),
-                doc.p(["1225 34th Street", doc.br(), "New Donk, USA"]),
+                doc.p(["34th Street Café", doc.br(), 
+                    "1225 34th Street", doc.br(),
+                    "New Donk, USA"]
+                ),
             ]),
         ]),
     );
