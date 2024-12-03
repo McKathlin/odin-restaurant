@@ -25,7 +25,7 @@ body {
     --system-font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
     --title-font: Christmas, serif;
 
-    --content-width: 70rem;
+    --content-width: 65rem;
 
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--header-text-color);
