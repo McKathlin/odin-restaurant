@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-size: clamp(12px, 8px + 0.8vw, 36px);
+}
+
 body {
     --header-text-color: #ffeebb;
     --header-back-color: #123020;
