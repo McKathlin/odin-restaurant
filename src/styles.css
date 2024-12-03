@@ -139,6 +139,10 @@ main {
     content: ")";
 }
 
+#content a {
+    color: var(--tab-color);
+}
+
 /* Menu */
 
 main #content ul {
